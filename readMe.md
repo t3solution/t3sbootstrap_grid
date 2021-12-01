@@ -26,4 +26,4 @@ The following extensions must be installed before: container min. v.1.4.2
 1) Include the static TypoScript of the extension.
 2) Delete the default PAGE object from your Setup.
 
-More infos & demos: https://www.t3sbootstrap.de/dokumentation/extensions/t3sbootstrap-grid
+More infos: https://www.t3sbootstrap.de/dokumentation/extensions/t3sbootstrap-grid
