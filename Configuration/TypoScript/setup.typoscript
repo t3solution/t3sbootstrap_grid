@@ -1,0 +1,144 @@
+plugin.tx_t3sbootstrap_grid {
+	view {
+		templateRootPaths.0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/
+		templateRootPaths.10 = {$plugin.tx_t3sbootstrap_grid.view.templateRootPath}
+	}
+}
+
+tt_content {
+	two_columns < lib.contentElement
+	two_columns {
+		templateName = TwoColumns
+		templateRootPaths {
+			0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/Container/
+			1 = {$plugin.t3sbootstrap_grid.view.templateRootPath}Container/
+		}
+		dataProcessing {
+
+			221 = B13\Container\DataProcessing\ContainerProcessor
+			221 {
+				colPos = 221
+				as = col_221
+			}
+			222 = B13\Container\DataProcessing\ContainerProcessor
+			222 {
+				colPos = 222
+				as = col_222
+			}
+		}
+	}
+	three_columns < lib.contentElement
+	three_columns {
+		templateName = ThreeColumns
+		templateRootPaths {
+			0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/Container/
+			1 = {$plugin.tx_t3sbootstrap_grid.view.templateRootPath}Container/
+		}
+		dataProcessing {
+
+			231 = B13\Container\DataProcessing\ContainerProcessor
+			231 {
+				colPos = 231
+				as = col_231
+			}
+			232 = B13\Container\DataProcessing\ContainerProcessor
+			232 {
+				colPos = 232
+				as = col_232
+			}
+			233 = B13\Container\DataProcessing\ContainerProcessor
+			233 {
+				colPos = 233
+				as = col_233
+			}
+		}
+	}
+	four_columns < lib.contentElement
+	four_columns {
+		templateName = FourColumns
+		templateRootPaths {
+			0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/Container/
+			1 = {$plugin.tx_t3sbootstrap_grid.view.templateRootPath}Container/
+		}
+		dataProcessing {
+
+			241 = B13\Container\DataProcessing\ContainerProcessor
+			241 {
+				colPos = 241
+				as = col_241
+			}
+			242 = B13\Container\DataProcessing\ContainerProcessor
+			242 {
+				colPos = 242
+				as = col_242
+			}
+			243 = B13\Container\DataProcessing\ContainerProcessor
+			243 {
+				colPos = 243
+				as = col_243
+			}
+			244 = B13\Container\DataProcessing\ContainerProcessor
+			244 {
+				colPos = 244
+				as = col_244
+			}
+		}
+	}
+	six_columns < lib.contentElement
+	six_columns {
+		templateName = SixColumns
+		templateRootPaths {
+			0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/Container/
+			1 = {$plugin.tx_t3sbootstrap_grid.view.templateRootPath}Container/
+		}
+		dataProcessing {
+
+			241 = B13\Container\DataProcessing\ContainerProcessor
+			241 {
+				colPos = 261
+				as = col_261
+			}
+			242 = B13\Container\DataProcessing\ContainerProcessor
+			242 {
+				colPos = 262
+				as = col_262
+			}
+			243 = B13\Container\DataProcessing\ContainerProcessor
+			243 {
+				colPos = 263
+				as = col_263
+			}
+			244 = B13\Container\DataProcessing\ContainerProcessor
+			244 {
+				colPos = 264
+				as = col_264
+			}
+			245 = B13\Container\DataProcessing\ContainerProcessor
+			245 {
+				colPos = 265
+				as = col_265
+			}
+			246 = B13\Container\DataProcessing\ContainerProcessor
+			246 {
+				colPos = 266
+				as = col_266
+			}
+		}
+	}
+	row_columns < lib.contentElement
+	row_columns {
+		templateName = RowColumns
+		templateRootPaths {
+			0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/Container/
+			1 = {$plugin.t3sbootstrap_grid.view.templateRootPath}Container/
+		}
+		dataProcessing {
+
+			221 = B13\Container\DataProcessing\ContainerProcessor
+			221 {
+				colPos = 290
+				as = col_290
+			}
+		}
+	}
+}

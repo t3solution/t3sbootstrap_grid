@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-06-25T20:32:45Z" product-name="t3sbootstrap_grid">
+		<header/>
+		<body>
+			<trans-unit id="tx_container.anyColumns.colPos.0">
+				<source>Column 1</source>
+			</trans-unit>
+			<trans-unit id="tx_container.anyColumns.colPos.1">
+				<source>Column 2</source>
+			</trans-unit>
+			<trans-unit id="tx_container.anyColumns.colPos.2">
+				<source>Column 3</source>
+			</trans-unit>
+			<trans-unit id="tx_container.anyColumns.colPos.3">
+				<source>Column 4</source>
+			</trans-unit>
+			<trans-unit id="tx_container.anyColumns.colPos.4">
+				<source>Column 5</source>
+			</trans-unit>
+			<trans-unit id="tx_container.anyColumns.colPos.5">
+				<source>Column 6</source>
+			</trans-unit>
+			<trans-unit id="tx_container.twoColumns.title">
+				<source>2 Columns</source>
+			</trans-unit>
+			<trans-unit id="tx_container.twoColumns.description">
+				<source>Container with 2 columns</source>
+			</trans-unit>
+			<trans-unit id="tx_container.threeColumns.title">
+				<source>3 Columns</source>
+			</trans-unit>
+			<trans-unit id="tx_container.threeColumns.description">
+				<source>Container with 3 columns</source>
+			</trans-unit>
+			<trans-unit id="tx_container.fourColumns.title">
+				<source>4 Columns</source>
+			</trans-unit>
+			<trans-unit id="tx_container.fourColumns.description">
+				<source>Container with 4 columns</source>
+			</trans-unit>
+			<trans-unit id="tx_container.sixColumns.title">
+				<source>6 Columns</source>
+			</trans-unit>
+			<trans-unit id="tx_container.sixColumns.description">
+				<source>Container with 6 columns</source>
+			</trans-unit>
+			<trans-unit id="tx_container.rowColumns.title">
+				<source>Row Columns</source>
+			</trans-unit>
+			<trans-unit id="tx_container.rowColumns.description">
+				<source>Use these row columns classes to quickly create basic grid layouts.</source>
+			</trans-unit>
+			<trans-unit id="tx_container.anyColumns.colPos.290">
+				<source>Row Column</source>
+			</trans-unit>
+			<trans-unit id="tx_container.group">
+				<source>T3S Bootstrap Grid</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

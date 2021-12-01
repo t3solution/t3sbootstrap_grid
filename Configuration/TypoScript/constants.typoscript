@@ -1,0 +1,7 @@
+
+plugin.tx_t3sbootstrap_grid {
+	view {
+		# cat=plugin.t3sbootstrap_grid/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:t3sbootstrap_grid/Resources/Private/Templates/
+	}
+}
