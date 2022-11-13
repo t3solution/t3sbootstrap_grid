@@ -22,7 +22,7 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
 	'depends' => [
 		'typo3' => '10.4.4-11.99.99',
-		'container' => '1.4.2-1.4.99'
+		'container' => '2.0.5-2.99.99'
 	],
     'conflicts' => [
 		't3sbootstrap' => '*',        
