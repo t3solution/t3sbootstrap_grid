@@ -15,6 +15,8 @@ use B13\Container\Backend\Grid\ContainerGridColumnItem;
 use B13\Container\Domain\Factory\Exception;
 use B13\Container\Domain\Factory\PageView\Backend\ContainerFactory;
 use B13\Container\Tca\Registry;
+use B13\Container\ContentDefender\ContainerColumnConfigurationService;
+use B13\Container\Domain\Service\ContainerService;
 use TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Backend\View\BackendLayout\Grid\Grid;
@@ -40,10 +42,28 @@ class T3sGridPreviewRenderer extends StandardContentPreviewRenderer
 	*/
 	protected $containerFactory;
 
-	public function __construct(Registry $tcaRegistry = null, ContainerFactory $containerFactory = null)
+	/**
+        * @var ContainerColumnConfigurationService
+        */
+    	protected $containerColumnConfigurationService;
+
+        /**
+        * @var ContainerService
+     	*/
+    	protected $containerService;
+
+	
+	public function __construct(
+		Registry $tcaRegistry,
+		ContainerFactory $containerFactory,
+		ContainerColumnConfigurationService $containerColumnConfigurationService,
+		ContainerService $containerService
+	)
 	{
-		$this->tcaRegistry = $tcaRegistry ?? GeneralUtility::makeInstance(Registry::class);
-		$this->containerFactory = $containerFactory ?? GeneralUtility::makeInstance(ContainerFactory::class);
+		$this->tcaRegistry = $tcaRegistry;
+		$this->containerFactory = $containerFactory;
+		$this->containerColumnConfigurationService = $containerColumnConfigurationService;
+		$this->containerService = $containerService;
 	}
 
 
@@ -167,7 +187,14 @@ class T3sGridPreviewRenderer extends StandardContentPreviewRenderer
 		foreach ($containerGrid as $row => $cols) {
 			$rowObject = GeneralUtility::makeInstance(GridRow::class, $context);
 			foreach ($cols as $col) {
-				$columnObject = GeneralUtility::makeInstance(ContainerGridColumn::class, $context, $col, $container);
+				$newContentElementAtTopTarget = $this->containerService->getNewContentElementAtTopTargetInColumn($container, $col['colPos']);
+
+                		if ($this->containerColumnConfigurationService->isMaxitemsReached($container, $col['colPos'])) {
+                    			$columnObject = GeneralUtility::makeInstance(ContainerGridColumn::class, $context, $col, $container, $newContentElementAtTopTarget, false);
+                		} else {
+                 		   $columnObject = GeneralUtility::makeInstance(ContainerGridColumn::class, $context, $col, $container, $newContentElementAtTopTarget);
+            		        }
+			
 				$rowObject->addColumn($columnObject);
 				if (isset($col['colPos'])) {
 					$records = $container->getChildrenByColPos($col['colPos']);
