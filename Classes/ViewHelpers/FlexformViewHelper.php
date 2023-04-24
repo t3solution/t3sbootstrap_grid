@@ -55,7 +55,6 @@ class FlexformViewHelper extends AbstractViewHelper
 			$colSix = 'col';
 
 			foreach (array_reverse($flexconf) as $key=>$grid) {
-				$keyArr = explode('_', $key);
 				if ( substr($key,-10) === 'extraClass' ) {
 					$extraClass[$key] = $grid;
 				}
@@ -76,8 +75,7 @@ class FlexformViewHelper extends AbstractViewHelper
 			$colSix = '';
 
 			foreach (array_reverse($flexconf) as $key=>$grid) {
-				$keyArr = explode('_', $key);
-				if ( substr($key,-10) === 'extraClass' ) {
+				if ( strpos($key, 'extraClass' ) === 0 ) {
 					$extraClass[$key] = $grid;
 				}
 
@@ -87,8 +85,7 @@ class FlexformViewHelper extends AbstractViewHelper
 					}
 				}
 
-				if ( !GeneralUtility::inList('extraClass_one, extraClass_two, extraClass_three, extraClass_four, extraClass_five,
-				 extraClass_six, equalWidth, noGutters, horizontalGutters, verticalGutters', $key) ) {
+				if ( !GeneralUtility::inList('extraClass_one,extraClass_two,extraClass_three,extraClass_four,extraClass_five,extraClass_six,equalWidth,noGutters,horizontalGutters,verticalGutters', $key) ) {
 					if ($grid) {
 						if ( substr($key, 0, 2) == 'xs' ) {
 							if ( substr($key, -3) == 'one' ) {
