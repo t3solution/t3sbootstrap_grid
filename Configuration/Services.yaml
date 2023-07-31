@@ -7,5 +7,3 @@ services:
   T3S\T3sbootstrapGrid\:
     resource: '../Classes/*'
 
-  T3S\T3sbootstrapGrid\Backend\Preview\T3sGridPreviewRenderer:
-    public: true

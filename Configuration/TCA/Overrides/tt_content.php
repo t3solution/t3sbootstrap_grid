@@ -3,7 +3,6 @@ use \TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use \B13\Container\Tca\Registry;
 use \B13\Container\Tca\ContainerConfiguration;
-use T3S\T3sbootstrapGrid\Backend\Preview\T3sGridPreviewRenderer;
 
 defined('TYPO3') or die();
 
@@ -30,6 +29,10 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
 	->setIcon('EXT:container/Resources/Public/Icons/container-2col.svg')
 	->setGroup('T3S Bootstrap Grid')
 	->setSaveAndCloseInNewContentElementWizard(false)
+	->setBackendTemplate('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Templates/Grid.html')
+	->setGridTemplate('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Templates/Grid.html')
+	->setGridPartialPaths(['EXT:backend/Resources/Private/Partials/', 'EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Partials/'])
+	->addGridPartialPath('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Partials/')
 );
 $GLOBALS['TCA']['tt_content']['types']['two_columns']['showitem'] = '
 		--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
@@ -68,6 +71,10 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
 	->setIcon('EXT:container/Resources/Public/Icons/container-3col.svg')
 	->setGroup('T3S Bootstrap Grid')
 	->setSaveAndCloseInNewContentElementWizard(false)
+	->setBackendTemplate('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Templates/Grid.html')
+	->setGridTemplate('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Templates/Grid.html')
+	->setGridPartialPaths(['EXT:backend/Resources/Private/Partials/', 'EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Partials/'])
+	->addGridPartialPath('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Partials/')
 );
 $GLOBALS['TCA']['tt_content']['types']['three_columns']['showitem'] = $GLOBALS['TCA']['tt_content']['types']['two_columns']['showitem'];
 
@@ -90,6 +97,10 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
 	->setIcon('EXT:container/Resources/Public/Icons/container-4col.svg')
 	->setGroup('T3S Bootstrap Grid')
 	->setSaveAndCloseInNewContentElementWizard(false)
+	->setBackendTemplate('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Templates/Grid.html')
+	->setGridTemplate('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Templates/Grid.html')
+	->setGridPartialPaths(['EXT:backend/Resources/Private/Partials/', 'EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Partials/'])
+	->addGridPartialPath('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Partials/')
 );
 $GLOBALS['TCA']['tt_content']['types']['four_columns']['showitem'] = $GLOBALS['TCA']['tt_content']['types']['two_columns']['showitem'];
 
@@ -114,6 +125,10 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
 	->setIcon('EXT:container/Resources/Public/Icons/container-4col.svg')
 	->setGroup('T3S Bootstrap Grid')
 	->setSaveAndCloseInNewContentElementWizard(false)
+	->setBackendTemplate('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Templates/Grid.html')
+	->setGridTemplate('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Templates/Grid.html')
+	->setGridPartialPaths(['EXT:backend/Resources/Private/Partials/', 'EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Partials/'])
+	->addGridPartialPath('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Partials/')
 );
 $GLOBALS['TCA']['tt_content']['types']['six_columns']['showitem'] = $GLOBALS['TCA']['tt_content']['types']['two_columns']['showitem'];
 
@@ -133,6 +148,10 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
 	->setIcon('EXT:container/Resources/Public/Icons/container-4col.svg')
 	->setGroup('T3S Bootstrap Grid')
 	->setSaveAndCloseInNewContentElementWizard(false)
+	->setBackendTemplate('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Templates/Grid.html')
+	->setGridTemplate('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Templates/Grid.html')
+	->setGridPartialPaths(['EXT:backend/Resources/Private/Partials/', 'EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Partials/'])
+	->addGridPartialPath('EXT:t3sbootstrap_grid/Resources/Private/Backend/Preview/Partials/')
 );
 $GLOBALS['TCA']['tt_content']['types']['row_columns']['showitem'] = $GLOBALS['TCA']['tt_content']['types']['two_columns']['showitem'];
 
@@ -175,10 +194,3 @@ $GLOBALS['TCA']['tt_content']['palettes']['bootstrapGrid'] = [
   'showitem' => 'tx_t3sbootstrap_grid_flexform',
 ];
 
-/***************
- * Show preview of tt_content elements in page module
- */
-$containers = ['two_columns', 'three_columns', 'four_columns', 'six_columns', 'row_columns'];
-foreach ($containers as $container) {
-	$GLOBALS['TCA']['tt_content']['types'][trim($container)]['previewRenderer'] = T3sGridPreviewRenderer::class;
-}

@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	xmlns:t3s="http://typo3.org/ns/T3S/T3sbootstrapGrid/ViewHelpers" data-namespace-typo3-fluid="true">
-	<f:variable name="gridclass">{t3s:flexform(flexform: '{data.tx_t3sbootstrap_grid_flexform}')}</f:variable>
+	<f:variable name="gridclass">{t3s:flexform(flexform: '{data.tx_t3sbootstrap_grid_flexform}', cType: '{data.CType}')}</f:variable>
 	<f:if condition="{gridclass.containerClass}">
 		<f:then>
 			<div class="{gridclass.containerClass}">
@@ -15,19 +15,18 @@
 
 
 <f:section name="Default">
-<div class="row{gridclass.rowClass}{gridclass.gutters}{gridclass.extraClassRow}">
+<div class="row{gridclass.gutters}{gridclass.extraClassRow}">
 	<f:if condition="{data.header} || {data.subheader} || {data.date}">
 		<div id="s{data.uid}-h" class="col-12 w-100">
 			<f:render partial="Header/All" arguments="{_all}" />
 		</div>
 	</f:if>
-		<f:if condition="{col_290}">
-			  <f:for each="{col_290}" as="child" key="key">
-				<div id="s{data.uid}-{key}" class="col{gridclass.extraClassCols.{key}}">
-					{child.renderedContent -> f:format.raw()}
-				</div>
-			  </f:for>
-		</f:if>
-	</div>
+	<f:if condition="{col_290}">
+			<f:for each="{col_290}" as="child" key="key">
+			<div id="s{data.uid}-{key}" class="col{gridclass.rowClass.{key}}{gridclass.extraClassCols.{key}}">
+				{child.renderedContent -> f:format.raw()}
+			</div>
+			</f:for>
+	</f:if>
 </div>
 </f:section>
