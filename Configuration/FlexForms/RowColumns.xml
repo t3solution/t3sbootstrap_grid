@@ -2,467 +2,580 @@
 	<sheets>
 		<sDEF>
 			<ROOT>
-				<TCEforms>
-					<sheetTitle>Settings</sheetTitle>
-				</TCEforms>
+				<sheetTitle>Settings</sheetTitle>
 				<type>array</type>
 				<el>
 					<horizontalGutters>
-						<TCEforms>
-							<label>Horizontal gutters</label>
-							<description>INFO: https://getbootstrap.com/docs/5.1/layout/gutters/#horizontal-gutters</description>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<items type="array">
-									<numIndex index="0" type="array">
-										<numIndex index="0">gx-0 (no gutters)</numIndex>
-										<numIndex index="1">gx-0</numIndex>
-									</numIndex>
-									<numIndex index="1" type="array">
-										<numIndex index="0">gx-1</numIndex>
-										<numIndex index="1">gx-1</numIndex>
-									</numIndex>
-									<numIndex index="2" type="array">
-										<numIndex index="0">gx-2</numIndex>
-										<numIndex index="1">gx-2</numIndex>
-									</numIndex>
-									<numIndex index="3" type="array">
-										<numIndex index="0">gx-3</numIndex>
-										<numIndex index="1">gx-3</numIndex>
-									</numIndex>
-									<numIndex index="4" type="array">
-										<numIndex index="0">gx-4 (default)</numIndex>
-										<numIndex index="1">gx-4</numIndex>
-									</numIndex>
-									<numIndex index="5" type="array">
-										<numIndex index="0">gx-5</numIndex>
-										<numIndex index="1">gx-5</numIndex>
-									</numIndex>
-								</items>
-								<default>gx-4</default>
-							</config>
-						</TCEforms>
+						<label>Horizontal gutters</label>
+						<description>INFO: https://getbootstrap.com/docs/5.3/layout/gutters/#horizontal-gutters</description>
+						<config>
+							<type>select</type>
+							<renderType>selectSingle</renderType>
+							<items type="array">
+								<numIndex index="0" type="array">
+									<numIndex index="0">gx-0 (no gutters)</numIndex>
+									<numIndex index="1">gx-0</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">gx-1</numIndex>
+									<numIndex index="1">gx-1</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="0">gx-2</numIndex>
+									<numIndex index="1">gx-2</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="0">gx-3</numIndex>
+									<numIndex index="1">gx-3</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="0">gx-4 (default)</numIndex>
+									<numIndex index="1">gx-4</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="0">gx-5</numIndex>
+									<numIndex index="1">gx-5</numIndex>
+								</numIndex>
+							</items>
+							<default>gx-4</default>
+						</config>
 					</horizontalGutters>
 					<verticalGutters>
-						<TCEforms>
-							<label>Vertical gutters</label>
-							<description>INFO: https://getbootstrap.com/docs/5.1/layout/gutters/#vertical-gutters</description>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<items type="array">
-									<numIndex index="0" type="array">
-										<numIndex index="0">gy-0 (no gutters)</numIndex>
-										<numIndex index="1">gy-0</numIndex>
-									</numIndex>
-									<numIndex index="1" type="array">
-										<numIndex index="0">gy-1</numIndex>
-										<numIndex index="1">gy-1</numIndex>
-									</numIndex>
-									<numIndex index="2" type="array">
-										<numIndex index="0">gy-2</numIndex>
-										<numIndex index="1">gy-2</numIndex>
-									</numIndex>
-									<numIndex index="3" type="array">
-										<numIndex index="0">gy-3</numIndex>
-										<numIndex index="1">gy-3</numIndex>
-									</numIndex>
-									<numIndex index="4" type="array">
-										<numIndex index="0">gy-4 (default)</numIndex>
-										<numIndex index="1">gy-4</numIndex>
-									</numIndex>
-									<numIndex index="5" type="array">
-										<numIndex index="0">gy-5</numIndex>
-										<numIndex index="1">gy-5</numIndex>
-									</numIndex>
-								</items>
-								<default>gy-4</default>
-							</config>
-						</TCEforms>
+						<label>Vertical gutters</label>
+						<description>INFO: https://getbootstrap.com/docs/5.3/layout/gutters/#vertical-gutters</description>
+						<config>
+							<type>select</type>
+							<renderType>selectSingle</renderType>
+							<items type="array">
+								<numIndex index="0" type="array">
+									<numIndex index="0">gy-0 (no gutters)</numIndex>
+									<numIndex index="1">gy-0</numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">gy-1</numIndex>
+									<numIndex index="1">gy-1</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="0">gy-2</numIndex>
+									<numIndex index="1">gy-2</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="0">gy-3</numIndex>
+									<numIndex index="1">gy-3</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="0">gy-4 (default)</numIndex>
+									<numIndex index="1">gy-4</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="0">gy-5</numIndex>
+									<numIndex index="1">gy-5</numIndex>
+								</numIndex>
+							</items>
+							<default>gy-0</default>
+						</config>
 					</verticalGutters>
 					<row_extraClass>
-						<TCEforms type="array">
-							<label>Extra Class for "row"</label>
-							<config>
-								<type>input</type>
-								<size>50</size>
-							</config>
-						</TCEforms>
+						<label>Extra Class for "row"</label>
+						<description>e.g.: 'row-cols-4' or 'row-cols-1 row-cols-sm-2 row-cols-md-4' | info: https://getbootstrap.com/docs/5.3/layout/grid/#row-columns</description>
+						<config>
+							<type>input</type>
+							<size>50</size>
+						</config>
 					</row_extraClass>
 					<cols_extraClass>
-						<TCEforms type="array">
-							<label>Extra Class for "cols"</label>
-							<description>Comma separated list for each column - e.g.: bg-success p-5, bg-secondary text-white p-5</description>
-							<config>
-								<type>input</type>
-								<size>50</size>
-							</config>
-						</TCEforms>
+						<label>Extra Class for "cols"</label>
+						<description>Comma separated list for each column - e.g.: bg-success p-5, bg-secondary text-white p-5</description>
+						<config>
+							<type>input</type>
+							<size>50</size>
+						</config>
 					</cols_extraClass>
 					<containerWrapper>
-						<TCEforms>
-							<label>Wrapp into a container </label>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<items type="array">
-									<numIndex index="0" type="array">
-										<numIndex index="0">no container</numIndex>
-										<numIndex index="1"></numIndex>
-									</numIndex>
-									<numIndex index="1" type="array">
-										<numIndex index="0">container</numIndex>
-										<numIndex index="1">container</numIndex>
-									</numIndex>
-									<numIndex index="2" type="array">
-										<numIndex index="0">container-sm</numIndex>
-										<numIndex index="1">container-sm</numIndex>
-									</numIndex>
-									<numIndex index="3" type="array">
-										<numIndex index="0">container-md</numIndex>
-										<numIndex index="1">container-md</numIndex>
-									</numIndex>
-									<numIndex index="4" type="array">
-										<numIndex index="0">container-lg</numIndex>
-										<numIndex index="1">container-lg</numIndex>
-									</numIndex>
-									<numIndex index="5" type="array">
-										<numIndex index="0">container-xl</numIndex>
-										<numIndex index="1">container-xl</numIndex>
-									</numIndex>
-									<numIndex index="6" type="array">
-										<numIndex index="0">container-xxl</numIndex>
-										<numIndex index="1">container-xxl</numIndex>
-									</numIndex>
-									<numIndex index="7" type="array">
-										<numIndex index="0">container-fluid</numIndex>
-										<numIndex index="1">container-fluid</numIndex>
-									</numIndex>
-								</items>
-								<default></default>
-							</config>
-						</TCEforms>
+						<label>Wrapp into a container </label>
+						<config>
+							<type>select</type>
+							<renderType>selectSingle</renderType>
+							<items type="array">
+								<numIndex index="0" type="array">
+									<numIndex index="0">no container</numIndex>
+									<numIndex index="1"></numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="0">container</numIndex>
+									<numIndex index="1">container</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="0">container-sm</numIndex>
+									<numIndex index="1">container-sm</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="0">container-md</numIndex>
+									<numIndex index="1">container-md</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="0">container-lg</numIndex>
+									<numIndex index="1">container-lg</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="0">container-xl</numIndex>
+									<numIndex index="1">container-xl</numIndex>
+								</numIndex>
+								<numIndex index="6" type="array">
+									<numIndex index="0">container-xxl</numIndex>
+									<numIndex index="1">container-xxl</numIndex>
+								</numIndex>
+								<numIndex index="7" type="array">
+									<numIndex index="0">container-fluid</numIndex>
+									<numIndex index="1">container-fluid</numIndex>
+								</numIndex>
+							</items>
+							<default></default>
+						</config>
 					</containerWrapper>
 				</el>
 			</ROOT>
 		</sDEF>
 		<xxl>
 			<ROOT>
-				<TCEforms>
-					<sheetTitle>row-cols-xxl-*</sheetTitle>
-				</TCEforms>
+				<sheetTitle>row-cols-xxl-*</sheetTitle>
 				<el>
 					<xxl_rowclass>
-						<TCEforms type="array">
-							<label>Row Columns</label>
-							<description>INFO: https://getbootstrap.com/docs/5.1/layout/grid/#row-columns</description>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<items type="array">
-									<numIndex index="0" type="array">
-										<numIndex index="0">none</numIndex>
-										<numIndex index="1"></numIndex>
-									</numIndex>
-									<numIndex index="1" type="array">
-										<numIndex index="0">Row columns 1</numIndex>
-										<numIndex index="1">row-cols-xxl-1</numIndex>
-									</numIndex>
-									<numIndex index="2" type="array">
-										<numIndex index="0">Row columns 2</numIndex>
-										<numIndex index="1">row-cols-xxl-2</numIndex>
-									</numIndex>
-									<numIndex index="3" type="array">
-										<numIndex index="0">Row columns 3</numIndex>
-										<numIndex index="1">row-cols-xxl-3</numIndex>
-									</numIndex>
-									<numIndex index="4" type="array">
-										<numIndex index="0">Row columns 4</numIndex>
-										<numIndex index="1">row-cols-xxl-4</numIndex>
-									</numIndex>
-									<numIndex index="5" type="array">
-										<numIndex index="0">Row columns 5</numIndex>
-										<numIndex index="1">row-cols-xxl-5</numIndex>
-									</numIndex>
-									<numIndex index="6" type="array">
-										<numIndex index="0">Row columns 6</numIndex>
-										<numIndex index="1">row-cols-xxl-6</numIndex>
-									</numIndex>
-									<numIndex index="7" type="array">
-										<numIndex index="0">Row columns auto</numIndex>
-										<numIndex index="1">row-cols-xxl-auto</numIndex>
-									</numIndex>
-								</items>
-								<default></default>
-							</config>
-						</TCEforms>
+						<label>Row Columns</label>
+						<description>INFO: https://getbootstrap.com/docs/5.3/layout/grid/#row-columns</description>
+						<config>
+							<type>select</type>
+							<renderType>selectSingle</renderType>
+							<items type="array">
+								<numIndex index="0" type="array">
+									<numIndex index="label">0</numIndex>
+									<numIndex index="value"></numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="label">1</numIndex>
+									<numIndex index="value">1</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="label">2</numIndex>
+									<numIndex index="value">2</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="label">3</numIndex>
+									<numIndex index="value">3</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="label">4</numIndex>
+									<numIndex index="value">4</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="label">5</numIndex>
+									<numIndex index="value">5</numIndex>
+								</numIndex>
+								<numIndex index="6" type="array">
+									<numIndex index="label">6</numIndex>
+									<numIndex index="value">6</numIndex>
+								</numIndex>
+								<numIndex index="7" type="array">
+									<numIndex index="label">7</numIndex>
+									<numIndex index="value">7</numIndex>
+								</numIndex>
+								<numIndex index="8" type="array">
+									<numIndex index="label">8</numIndex>
+									<numIndex index="value">8</numIndex>
+								</numIndex>
+								<numIndex index="9" type="array">
+									<numIndex index="label">9</numIndex>
+									<numIndex index="value">9</numIndex>
+								</numIndex>
+								<numIndex index="10" type="array">
+									<numIndex index="label">10</numIndex>
+									<numIndex index="value">10</numIndex>
+								</numIndex>
+								<numIndex index="11" type="array">
+									<numIndex index="label">11</numIndex>
+									<numIndex index="value">11</numIndex>
+								</numIndex>
+								<numIndex index="12" type="array">
+									<numIndex index="label">12</numIndex>
+									<numIndex index="value">12</numIndex>
+								</numIndex>
+								<numIndex index="13" type="array">
+									<numIndex index="label">auto (size columns based on the natural width of their content)</numIndex>
+									<numIndex index="value">auto</numIndex>
+								</numIndex>
+							</items>
+							<default></default>
+						</config>
 					</xxl_rowclass>
 				</el>
 			</ROOT>
 		</xxl>
 		<xl>
 			<ROOT>
-				<TCEforms>
-					<sheetTitle>row-cols-xl-*</sheetTitle>
-				</TCEforms>
+				<sheetTitle>row-cols-xl-*</sheetTitle>
 				<el>
 					<xl_rowclass>
-						<TCEforms type="array">
-							<label>Row Columns</label>
-							<description>INFO: https://getbootstrap.com/docs/5.1/layout/grid/#row-columns</description>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<items type="array">
-									<numIndex index="0" type="array">
-										<numIndex index="0">none</numIndex>
-										<numIndex index="1"></numIndex>
-									</numIndex>
-									<numIndex index="1" type="array">
-										<numIndex index="0">Row columns 1</numIndex>
-										<numIndex index="1">row-cols-xl-1</numIndex>
-									</numIndex>
-									<numIndex index="2" type="array">
-										<numIndex index="0">Row columns 2</numIndex>
-										<numIndex index="1">row-cols-xl-2</numIndex>
-									</numIndex>
-									<numIndex index="3" type="array">
-										<numIndex index="0">Row columns 3</numIndex>
-										<numIndex index="1">row-cols-xl-3</numIndex>
-									</numIndex>
-									<numIndex index="4" type="array">
-										<numIndex index="0">Row columns 4</numIndex>
-										<numIndex index="1">row-cols-xl-4</numIndex>
-									</numIndex>
-									<numIndex index="5" type="array">
-										<numIndex index="0">Row columns 5</numIndex>
-										<numIndex index="1">row-cols-xl-5</numIndex>
-									</numIndex>
-									<numIndex index="6" type="array">
-										<numIndex index="0">Row columns 6</numIndex>
-										<numIndex index="1">row-cols-xl-6</numIndex>
-									</numIndex>
-									<numIndex index="7" type="array">
-										<numIndex index="0">Row columns auto</numIndex>
-										<numIndex index="1">row-cols-xl-auto</numIndex>
-									</numIndex>
-								</items>
-								<default></default>
-							</config>
-						</TCEforms>
+						<label>Row Columns</label>
+						<description>INFO: https://getbootstrap.com/docs/5.3/layout/grid/#row-columns</description>
+						<config>
+							<type>select</type>
+							<renderType>selectSingle</renderType>
+							<items type="array">
+								<numIndex index="0" type="array">
+									<numIndex index="label">0</numIndex>
+									<numIndex index="value"></numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="label">1</numIndex>
+									<numIndex index="value">1</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="label">2</numIndex>
+									<numIndex index="value">2</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="label">3</numIndex>
+									<numIndex index="value">3</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="label">4</numIndex>
+									<numIndex index="value">4</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="label">5</numIndex>
+									<numIndex index="value">5</numIndex>
+								</numIndex>
+								<numIndex index="6" type="array">
+									<numIndex index="label">6</numIndex>
+									<numIndex index="value">6</numIndex>
+								</numIndex>
+								<numIndex index="7" type="array">
+									<numIndex index="label">7</numIndex>
+									<numIndex index="value">7</numIndex>
+								</numIndex>
+								<numIndex index="8" type="array">
+									<numIndex index="label">8</numIndex>
+									<numIndex index="value">8</numIndex>
+								</numIndex>
+								<numIndex index="9" type="array">
+									<numIndex index="label">9</numIndex>
+									<numIndex index="value">9</numIndex>
+								</numIndex>
+								<numIndex index="10" type="array">
+									<numIndex index="label">10</numIndex>
+									<numIndex index="value">10</numIndex>
+								</numIndex>
+								<numIndex index="11" type="array">
+									<numIndex index="label">11</numIndex>
+									<numIndex index="value">11</numIndex>
+								</numIndex>
+								<numIndex index="12" type="array">
+									<numIndex index="label">12</numIndex>
+									<numIndex index="value">12</numIndex>
+								</numIndex>
+								<numIndex index="13" type="array">
+									<numIndex index="label">auto (size columns based on the natural width of their content)</numIndex>
+									<numIndex index="value">auto</numIndex>
+								</numIndex>
+							</items>
+							<default></default>
+						</config>
 					</xl_rowclass>
 				</el>
 			</ROOT>
 		</xl>
 		<lg>
 			<ROOT>
-				<TCEforms>
-					<sheetTitle>row-cols-lg-*</sheetTitle>
-				</TCEforms>
+				<sheetTitle>row-cols-lg-*</sheetTitle>
 				<el>
 					<lg_rowclass>
-						<TCEforms type="array">
-							<label>Row Columns</label>
-							<description>INFO: https://getbootstrap.com/docs/5.1/layout/grid/#row-columns</description>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<items type="array">
-									<numIndex index="0" type="array">
-										<numIndex index="0">none</numIndex>
-										<numIndex index="1"></numIndex>
-									</numIndex>
-									<numIndex index="1" type="array">
-										<numIndex index="0">Row columns 1</numIndex>
-										<numIndex index="1">row-cols-lg-1</numIndex>
-									</numIndex>
-									<numIndex index="2" type="array">
-										<numIndex index="0">Row columns 2</numIndex>
-										<numIndex index="1">row-cols-lg-2</numIndex>
-									</numIndex>
-									<numIndex index="3" type="array">
-										<numIndex index="0">Row columns 3</numIndex>
-										<numIndex index="1">row-cols-lg-3</numIndex>
-									</numIndex>
-									<numIndex index="4" type="array">
-										<numIndex index="0">Row columns 4</numIndex>
-										<numIndex index="1">row-cols-lg-4</numIndex>
-									</numIndex>
-									<numIndex index="5" type="array">
-										<numIndex index="0">Row columns 5</numIndex>
-										<numIndex index="1">row-cols-lg-5</numIndex>
-									</numIndex>
-									<numIndex index="6" type="array">
-										<numIndex index="0">Row columns 6</numIndex>
-										<numIndex index="1">row-cols-lg-6</numIndex>
-									</numIndex>
-									<numIndex index="7" type="array">
-										<numIndex index="0">Row columns auto</numIndex>
-										<numIndex index="1">row-cols-lg-auto</numIndex>
-									</numIndex>
-								</items>
-								<default></default>
-							</config>
-						</TCEforms>
+						<label>Row Columns</label>
+						<description>INFO: https://getbootstrap.com/docs/5.3/layout/grid/#row-columns</description>
+						<config>
+							<type>select</type>
+							<renderType>selectSingle</renderType>
+							<items type="array">
+								<numIndex index="0" type="array">
+									<numIndex index="label">0</numIndex>
+									<numIndex index="value"></numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="label">1</numIndex>
+									<numIndex index="value">1</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="label">2</numIndex>
+									<numIndex index="value">2</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="label">3</numIndex>
+									<numIndex index="value">3</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="label">4</numIndex>
+									<numIndex index="value">4</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="label">5</numIndex>
+									<numIndex index="value">5</numIndex>
+								</numIndex>
+								<numIndex index="6" type="array">
+									<numIndex index="label">6</numIndex>
+									<numIndex index="value">6</numIndex>
+								</numIndex>
+								<numIndex index="7" type="array">
+									<numIndex index="label">7</numIndex>
+									<numIndex index="value">7</numIndex>
+								</numIndex>
+								<numIndex index="8" type="array">
+									<numIndex index="label">8</numIndex>
+									<numIndex index="value">8</numIndex>
+								</numIndex>
+								<numIndex index="9" type="array">
+									<numIndex index="label">9</numIndex>
+									<numIndex index="value">9</numIndex>
+								</numIndex>
+								<numIndex index="10" type="array">
+									<numIndex index="label">10</numIndex>
+									<numIndex index="value">10</numIndex>
+								</numIndex>
+								<numIndex index="11" type="array">
+									<numIndex index="label">11</numIndex>
+									<numIndex index="value">11</numIndex>
+								</numIndex>
+								<numIndex index="12" type="array">
+									<numIndex index="label">12</numIndex>
+									<numIndex index="value">12</numIndex>
+								</numIndex>
+								<numIndex index="13" type="array">
+									<numIndex index="label">auto (size columns based on the natural width of their content)</numIndex>
+									<numIndex index="value">auto</numIndex>
+								</numIndex>
+							</items>
+							<default></default>
+						</config>
 					</lg_rowclass>
 				</el>
 			</ROOT>
 		</lg>
 		<md>
 			<ROOT>
-				<TCEforms>
-					<sheetTitle>row-cols-md-*</sheetTitle>
-				</TCEforms>
+				<sheetTitle>row-cols-md-*</sheetTitle>
 				<el>
 					<md_rowclass>
-						<TCEforms type="array">
-							<label>Row Columns</label>
-							<description>INFO: https://getbootstrap.com/docs/5.1/layout/grid/#row-columns</description>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<items type="array">
-									<numIndex index="0" type="array">
-										<numIndex index="0">none</numIndex>
-										<numIndex index="1"></numIndex>
-									</numIndex>
-									<numIndex index="1" type="array">
-										<numIndex index="0">Row columns 1</numIndex>
-										<numIndex index="1">row-cols-md-1</numIndex>
-									</numIndex>
-									<numIndex index="2" type="array">
-										<numIndex index="0">Row columns 2</numIndex>
-										<numIndex index="1">row-cols-md-2</numIndex>
-									</numIndex>
-									<numIndex index="3" type="array">
-										<numIndex index="0">Row columns 3</numIndex>
-										<numIndex index="1">row-cols-md-3</numIndex>
-									</numIndex>
-									<numIndex index="4" type="array">
-										<numIndex index="0">Row columns 4</numIndex>
-										<numIndex index="1">row-cols-md-4</numIndex>
-									</numIndex>
-									<numIndex index="5" type="array">
-										<numIndex index="0">Row columns 5</numIndex>
-										<numIndex index="1">row-cols-md-5</numIndex>
-									</numIndex>
-									<numIndex index="6" type="array">
-										<numIndex index="0">Row columns 6</numIndex>
-										<numIndex index="1">row-cols-md-6</numIndex>
-									</numIndex>
-									<numIndex index="7" type="array">
-										<numIndex index="0">Row columns auto</numIndex>
-										<numIndex index="1">row-cols-md-auto</numIndex>
-									</numIndex>
-								</items>
-								<default>row-cols-md-3</default>
-							</config>
-						</TCEforms>
+						<label>Row Columns</label>
+						<description>INFO: https://getbootstrap.com/docs/5.3/layout/grid/#row-columns</description>
+						<config>
+							<type>select</type>
+							<renderType>selectSingle</renderType>
+							<items type="array">
+								<numIndex index="0" type="array">
+									<numIndex index="label">0</numIndex>
+									<numIndex index="value"></numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="label">1</numIndex>
+									<numIndex index="value">1</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="label">2</numIndex>
+									<numIndex index="value">2</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="label">3</numIndex>
+									<numIndex index="value">3</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="label">4</numIndex>
+									<numIndex index="value">4</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="label">5</numIndex>
+									<numIndex index="value">5</numIndex>
+								</numIndex>
+								<numIndex index="6" type="array">
+									<numIndex index="label">6</numIndex>
+									<numIndex index="value">6</numIndex>
+								</numIndex>
+								<numIndex index="7" type="array">
+									<numIndex index="label">7</numIndex>
+									<numIndex index="value">7</numIndex>
+								</numIndex>
+								<numIndex index="8" type="array">
+									<numIndex index="label">8</numIndex>
+									<numIndex index="value">8</numIndex>
+								</numIndex>
+								<numIndex index="9" type="array">
+									<numIndex index="label">9</numIndex>
+									<numIndex index="value">9</numIndex>
+								</numIndex>
+								<numIndex index="10" type="array">
+									<numIndex index="label">10</numIndex>
+									<numIndex index="value">10</numIndex>
+								</numIndex>
+								<numIndex index="11" type="array">
+									<numIndex index="label">11</numIndex>
+									<numIndex index="value">11</numIndex>
+								</numIndex>
+								<numIndex index="12" type="array">
+									<numIndex index="label">12</numIndex>
+									<numIndex index="value">12</numIndex>
+								</numIndex>
+								<numIndex index="13" type="array">
+									<numIndex index="label">auto (size columns based on the natural width of their content)</numIndex>
+									<numIndex index="value">auto</numIndex>
+								</numIndex>
+							</items>
+							<default></default>
+						</config>
 					</md_rowclass>
 				</el>
 			</ROOT>
 		</md>
 		<sm>
 			<ROOT>
-				<TCEforms>
-					<sheetTitle>row-cols-sm-*</sheetTitle>
-				</TCEforms>
+				<sheetTitle>row-cols-sm-*</sheetTitle>
 				<el>
 					<sm_rowclass>
-						<TCEforms type="array">
-							<label>Row Columns</label>
-							<description>INFO: https://getbootstrap.com/docs/5.1/layout/grid/#row-columns</description>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<items type="array">
-									<numIndex index="0" type="array">
-										<numIndex index="0">none</numIndex>
-										<numIndex index="1"></numIndex>
-									</numIndex>
-									<numIndex index="1" type="array">
-										<numIndex index="0">Row columns 1</numIndex>
-										<numIndex index="1">row-cols-sm-1</numIndex>
-									</numIndex>
-									<numIndex index="2" type="array">
-										<numIndex index="0">Row columns 2</numIndex>
-										<numIndex index="1">row-cols-sm-2</numIndex>
-									</numIndex>
-									<numIndex index="3" type="array">
-										<numIndex index="0">Row columns 3</numIndex>
-										<numIndex index="1">row-cols-sm-3</numIndex>
-									</numIndex>
-									<numIndex index="4" type="array">
-										<numIndex index="0">Row columns 4</numIndex>
-										<numIndex index="1">row-cols-sm-4</numIndex>
-									</numIndex>
-									<numIndex index="5" type="array">
-										<numIndex index="0">Row columns 5</numIndex>
-										<numIndex index="1">row-cols-sm-5</numIndex>
-									</numIndex>
-									<numIndex index="6" type="array">
-										<numIndex index="0">Row columns 6</numIndex>
-										<numIndex index="1">row-cols-sm-6</numIndex>
-									</numIndex>
-									<numIndex index="7" type="array">
-										<numIndex index="0">Row columns auto</numIndex>
-										<numIndex index="1">row-cols-sm-auto</numIndex>
-									</numIndex>
-								</items>
-								<default></default>
-							</config>
-						</TCEforms>
+						<label>Row Columns</label>
+						<description>INFO: https://getbootstrap.com/docs/5.3/layout/grid/#row-columns</description>
+						<config>
+							<type>select</type>
+							<renderType>selectSingle</renderType>
+							<items type="array">
+								<numIndex index="0" type="array">
+									<numIndex index="label">0</numIndex>
+									<numIndex index="value"></numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="label">1</numIndex>
+									<numIndex index="value">1</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="label">2</numIndex>
+									<numIndex index="value">2</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="label">3</numIndex>
+									<numIndex index="value">3</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="label">4</numIndex>
+									<numIndex index="value">4</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="label">5</numIndex>
+									<numIndex index="value">5</numIndex>
+								</numIndex>
+								<numIndex index="6" type="array">
+									<numIndex index="label">6</numIndex>
+									<numIndex index="value">6</numIndex>
+								</numIndex>
+								<numIndex index="7" type="array">
+									<numIndex index="label">7</numIndex>
+									<numIndex index="value">7</numIndex>
+								</numIndex>
+								<numIndex index="8" type="array">
+									<numIndex index="label">8</numIndex>
+									<numIndex index="value">8</numIndex>
+								</numIndex>
+								<numIndex index="9" type="array">
+									<numIndex index="label">9</numIndex>
+									<numIndex index="value">9</numIndex>
+								</numIndex>
+								<numIndex index="10" type="array">
+									<numIndex index="label">10</numIndex>
+									<numIndex index="value">10</numIndex>
+								</numIndex>
+								<numIndex index="11" type="array">
+									<numIndex index="label">11</numIndex>
+									<numIndex index="value">11</numIndex>
+								</numIndex>
+								<numIndex index="12" type="array">
+									<numIndex index="label">12</numIndex>
+									<numIndex index="value">12</numIndex>
+								</numIndex>
+								<numIndex index="13" type="array">
+									<numIndex index="label">auto (size columns based on the natural width of their content)</numIndex>
+									<numIndex index="value">auto</numIndex>
+								</numIndex>
+							</items>
+							<default></default>
+						</config>
 					</sm_rowclass>
 				</el>
 			</ROOT>
 		</sm>
 		<xs>
 			<ROOT>
-				<TCEforms>
-					<sheetTitle>row-cols-*</sheetTitle>
-				</TCEforms>
+				<sheetTitle>row-cols-*</sheetTitle>
 				<el>
 					<xs_rowclass>
-						<TCEforms type="array">
-							<label>Row Columns</label>
-							<description>INFO: https://getbootstrap.com/docs/5.1/layout/grid/#row-columns</description>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<items type="array">
-									<numIndex index="0" type="array">
-										<numIndex index="0">Row columns 1</numIndex>
-										<numIndex index="1">row-cols-1</numIndex>
-									</numIndex>
-									<numIndex index="1" type="array">
-										<numIndex index="0">Row columns 2</numIndex>
-										<numIndex index="1">row-cols-2</numIndex>
-									</numIndex>
-									<numIndex index="2" type="array">
-										<numIndex index="0">Row columns 3</numIndex>
-										<numIndex index="1">row-cols-3</numIndex>
-									</numIndex>
-									<numIndex index="3" type="array">
-										<numIndex index="0">Row columns 4</numIndex>
-										<numIndex index="1">row-cols-4</numIndex>
-									</numIndex>
-									<numIndex index="4" type="array">
-										<numIndex index="0">Row columns 5</numIndex>
-										<numIndex index="1">row-cols-5</numIndex>
-									</numIndex>
-									<numIndex index="5" type="array">
-										<numIndex index="0">Row columns 6</numIndex>
-										<numIndex index="1">row-cols-6</numIndex>
-									</numIndex>
-									<numIndex index="6" type="array">
-										<numIndex index="0">Row columns auto</numIndex>
-										<numIndex index="1">row-cols-auto</numIndex>
-									</numIndex>
-								</items>
-								<default>row-cols-1</default>
-							</config>
-						</TCEforms>
+						<label>Row Columns</label>
+						<description>INFO: https://getbootstrap.com/docs/5.3/layout/grid/#row-columns</description>
+						<config>
+							<type>select</type>
+							<renderType>selectSingle</renderType>
+							<items type="array">
+								<numIndex index="0" type="array">
+									<numIndex index="label">0</numIndex>
+									<numIndex index="value"></numIndex>
+								</numIndex>
+								<numIndex index="1" type="array">
+									<numIndex index="label">1</numIndex>
+									<numIndex index="value">1</numIndex>
+								</numIndex>
+								<numIndex index="2" type="array">
+									<numIndex index="label">2</numIndex>
+									<numIndex index="value">2</numIndex>
+								</numIndex>
+								<numIndex index="3" type="array">
+									<numIndex index="label">3</numIndex>
+									<numIndex index="value">3</numIndex>
+								</numIndex>
+								<numIndex index="4" type="array">
+									<numIndex index="label">4</numIndex>
+									<numIndex index="value">4</numIndex>
+								</numIndex>
+								<numIndex index="5" type="array">
+									<numIndex index="label">5</numIndex>
+									<numIndex index="value">5</numIndex>
+								</numIndex>
+								<numIndex index="6" type="array">
+									<numIndex index="label">6</numIndex>
+									<numIndex index="value">6</numIndex>
+								</numIndex>
+								<numIndex index="7" type="array">
+									<numIndex index="label">7</numIndex>
+									<numIndex index="value">7</numIndex>
+								</numIndex>
+								<numIndex index="8" type="array">
+									<numIndex index="label">8</numIndex>
+									<numIndex index="value">8</numIndex>
+								</numIndex>
+								<numIndex index="9" type="array">
+									<numIndex index="label">9</numIndex>
+									<numIndex index="value">9</numIndex>
+								</numIndex>
+								<numIndex index="10" type="array">
+									<numIndex index="label">10</numIndex>
+									<numIndex index="value">10</numIndex>
+								</numIndex>
+								<numIndex index="11" type="array">
+									<numIndex index="label">11</numIndex>
+									<numIndex index="value">11</numIndex>
+								</numIndex>
+								<numIndex index="12" type="array">
+									<numIndex index="label">12</numIndex>
+									<numIndex index="value">12</numIndex>
+								</numIndex>
+								<numIndex index="13" type="array">
+									<numIndex index="label">auto (size columns based on the natural width of their content)</numIndex>
+									<numIndex index="value">auto</numIndex>
+								</numIndex>
+							</items>
+							<default></default>
+						</config>
 					</xs_rowclass>
 				</el>
 			</ROOT>

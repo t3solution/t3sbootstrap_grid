@@ -5,6 +5,11 @@ mod.wizards {
 	newContentElement {
 		wizardItems {
 			t3sbsgrid {
+
+
+iconIdentifier = bootstrapgridlogo
+
+
 				header = T3SB Grid
 				elements {
 					twocolumns {
@@ -44,3 +49,4 @@ mod.wizards {
 		}
 	}
 }
+
