@@ -46,7 +46,7 @@ class FlexformViewHelper extends AbstractViewHelper
 		$extraClass['extraClass_five'] = '';
 		$extraClass['extraClass_six'] = '';
 
-		if ( $flexconf['equalWidth'] ) {
+		if ( !empty($flexconf['equalWidth']) ) {
 			$colOne = 'col';
 			$colTwo = 'col';
 			$colThree = 'col';
