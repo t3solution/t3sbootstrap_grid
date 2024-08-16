@@ -18,7 +18,7 @@ $EM_CONF[$_EXTKEY] = [
     'author_email' => 'typo3@t3solution.de',
     'state' => 'stable',
 
-    'version' => '3.0.0',
+    'version' => '3.0.1',
     'constraints' => [
 	'depends' => [
       'typo3' => '12.4.2-12.4.99',
