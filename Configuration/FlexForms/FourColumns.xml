@@ -173,7 +173,7 @@
 				<type>array</type>
 				<el>
 					<xxl_one>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -239,7 +239,7 @@
 						</config>
 					</xxl_one>
 					<xxl_two>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -305,7 +305,7 @@
 						</config>
 					</xxl_two>
 					<xxl_three>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -371,7 +371,7 @@
 						</config>
 					</xxl_three>
 					<xxl_four>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -445,7 +445,7 @@
 				<type>array</type>
 				<el>
 					<xl_one>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -511,7 +511,7 @@
 						</config>
 					</xl_one>
 					<xl_two>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -577,7 +577,7 @@
 						</config>
 					</xl_two>
 					<xl_three>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -643,7 +643,7 @@
 						</config>
 					</xl_three>
 					<xl_four>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -717,7 +717,7 @@
 				<type>array</type>
 				<el>
 					<lg_one>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -783,7 +783,7 @@
 						</config>
 					</lg_one>
 					<lg_two>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -849,7 +849,7 @@
 						</config>
 					</lg_two>
 					<lg_three>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -915,7 +915,7 @@
 						</config>
 					</lg_three>
 					<lg_four>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -989,7 +989,7 @@
 				<type>array</type>
 				<el>
 					<md_one>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1055,7 +1055,7 @@
 						</config>
 					</md_one>
 					<md_two>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1121,7 +1121,7 @@
 						</config>
 					</md_two>
 					<md_three>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1187,7 +1187,7 @@
 						</config>
 					</md_three>
 					<md_four>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1261,7 +1261,7 @@
 				<type>array</type>
 				<el>
 					<sm_one>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1327,7 +1327,7 @@
 						</config>
 					</sm_one>
 					<sm_two>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1393,7 +1393,7 @@
 						</config>
 					</sm_two>
 					<sm_three>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1459,7 +1459,7 @@
 						</config>
 					</sm_three>
 					<sm_four>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1533,7 +1533,7 @@
 				<type>array</type>
 				<el>
 					<xs_one>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1599,7 +1599,7 @@
 						</config>
 					</xs_one>
 					<xs_two>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1665,7 +1665,7 @@
 						</config>
 					</xs_two>
 					<xs_three>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1731,7 +1731,7 @@
 						</config>
 					</xs_three>
 					<xs_four>
-						<label>LLL:EXT:t3sbootstrap/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
+						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.3</label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
