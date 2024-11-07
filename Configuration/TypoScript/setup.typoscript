@@ -5,6 +5,15 @@ plugin.tx_t3sbootstrap_grid {
 	}
 }
 
+page {
+	includeCSS {
+		bootstrapCDN = https://cdn.jsdelivr.net/npm/bootstrap@{$plugin.tx_t3sbootstrap_grid.settings.bootstrapVersion}/dist/css/bootstrap.min.css
+		bootstrapCDN.external = 1
+		bootstrapCDN.forceOnTop = 1
+		bootstrapCDN.if.isTrue = {$plugin.tx_t3sbootstrap_grid.settings.enableCDN}
+	}
+}
+
 tt_content {
 	two_columns < lib.contentElement
 	two_columns {

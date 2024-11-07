@@ -1,5 +1,11 @@
 <?php
+declare(strict_types=1);
+
 namespace T3S\T3sbootstrapGrid\ViewHelpers;
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Service\FlexFormService;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /*
  * This file is part of the TYPO3 extension t3sbootstrap_grid.
@@ -7,37 +13,27 @@ namespace T3S\T3sbootstrapGrid\ViewHelpers;
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
-
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Service\FlexFormService;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-
 class FlexformViewHelper extends AbstractViewHelper
 {
-	use CompileWithRenderStatic;
 
 	/**
 	 * @return void
 	 */
-	public function initializeArguments()
+	public function initializeArguments(): void
 	{
 		parent::initializeArguments();
 		$this->registerArgument('flexform', 'string', 'Flexform field');
 		$this->registerArgument('cType', 'string', 'CType', false);
 	}
 
-	public static function renderStatic(
-		array $arguments,
-		\Closure $renderChildrenClosure,
-		RenderingContextInterface $renderingContext
-	) {
-
-		$flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
-		$flexconf = $flexFormService->convertFlexFormContentToArray($arguments['flexform']);
-
+	public function render()
+	{
 		$classes = [];
+
+		if ( empty( $this->arguments['flexform']) ) {
+			return $classes;
+		}
+
 		$extraClass = [];
 		$extraClass['extraClass_one'] = '';
 		$extraClass['extraClass_two'] = '';
@@ -48,13 +44,14 @@ class FlexformViewHelper extends AbstractViewHelper
 		$classes['extraClassCols'] = '';
 		$classes['rowClass'] = '';
 
-		if ( !empty($arguments['cType']) && $arguments['cType'] == 'row_columns' ) {
+		$flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
+		$flexconf = $flexFormService->convertFlexFormContentToArray($this->arguments['flexform']);
+
+		if ( !empty($this->arguments['cType']) && $this->arguments['cType'] == 'row_columns' ) {
 			// row_columns
 			if ( !empty($flexconf['cols_extraClass']) ) {
-				foreach (explode(',',$flexconf['cols_extraClass']) as $key=>$cec ) {
-					$colsClass[$key] = ' '.trim($cec);
-				}
-				$classes['extraClassCols'] = $colsClass;
+				$classes['extraClassCols'] = ' '.trim($flexconf['cols_extraClass']);
+
 			}
 
 			$keyArr = [];
@@ -119,7 +116,6 @@ class FlexformViewHelper extends AbstractViewHelper
 				$colFive = '';
 				$colSix = '';
 
-
 				foreach (array_reverse($flexconf) as $key=>$grid) {
 
 					if (!empty($grid)) {
@@ -179,25 +175,27 @@ class FlexformViewHelper extends AbstractViewHelper
 			$classes['columnFour'] = trim($colFour.' '.$extraClass['extraClass_four']);
 			$classes['columnFive'] = trim($colFive.' '.$extraClass['extraClass_five']);
 			$classes['columnSix'] = trim($colSix.' '.$extraClass['extraClass_six']);
-
-
 		}
 
-		$horizontalGutters = !empty($flexconf['horizontalGutters']) && $flexconf['horizontalGutters'] == 'gx-4' ? '' : trim($flexconf['horizontalGutters']);
-		$verticalGutters = !empty($flexconf['verticalGutters']) && $flexconf['verticalGutters'] == 'gy-4' ? '' : trim($flexconf['verticalGutters']);
+		$horizontalGutters = !empty($flexconf['horizontalGutters']) && $flexconf['horizontalGutters'] == 'gx-4' ? '' : ' '.$flexconf['horizontalGutters'];
+		$verticalGutters = !empty($flexconf['verticalGutters']) && $flexconf['verticalGutters'] == 'gy-4' ? '' : $flexconf['verticalGutters'];
 		$extraContainerClass = '';
-		if ( $verticalGutters !== 'gy-0' ) {
-			$extraContainerClass = ' overflow-hidden';
-		}
+		#if ( $verticalGutters !== 'gy-0' ) {
+		#	$extraContainerClass = ' overflow-hidden';
+		#}
 		$containerWrapper = !empty($flexconf['containerWrapper']) ? $flexconf['containerWrapper'] : '';
 		if ( empty($containerWrapper) ) {
 			$extraContainerClass = trim($extraContainerClass);
 		}
+		$gutters = trim($horizontalGutters).' '.trim($verticalGutters);
+		if (empty($gutters)) {
+			$classes['gutters'] = '';
+		} else {
+			$classes['gutters'] = ' '.trim($gutters);
+		}
 
-		$classes['gutters'] = ' '.$horizontalGutters.' '.$verticalGutters;
 		$classes['extraClassRow'] = !empty($flexconf['row_extraClass']) ?	 ' '.trim($flexconf['row_extraClass']) : '';
 		$classes['containerClass'] = $containerWrapper.$extraContainerClass;
-
 
 		return $classes;
 	}

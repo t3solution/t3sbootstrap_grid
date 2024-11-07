@@ -4,4 +4,11 @@ plugin.tx_t3sbootstrap_grid {
 		# cat=plugin.t3sbootstrap_grid/file; type=string; label=Path to template root (FE)
 		templateRootPath = EXT:t3sbootstrap_grid/Resources/Private/Templates/
 	}
+	settings {
+		# customsubcategory=cdn=BOOTSTRAP CDN
+		# cat=plugin.t3sbootstrap_grid/cdn/10; type=boolean; label=Enable CDN - please consider the "GDPR" ("DSGVO")
+		enableCDN = 0
+		# cat=plugin.t3sbootstrap_grid/cdn/20; type=small; label=Bootstrap version:
+		bootstrapVersion = 5.3.3
+	}
 }
