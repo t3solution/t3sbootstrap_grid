@@ -1,6 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	xmlns:t3s="http://typo3.org/ns/T3S/T3sbootstrapGrid/ViewHelpers" data-namespace-typo3-fluid="true">
+
 	<f:variable name="gridclass">{t3s:flexform(flexform: '{data.tx_t3sbootstrap_grid_flexform}')}</f:variable>
+
 	<f:if condition="{gridclass.containerClass}">
 		<f:then>
 			<div class="{gridclass.containerClass}">
