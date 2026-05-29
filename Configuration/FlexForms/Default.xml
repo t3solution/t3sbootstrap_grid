@@ -3,14 +3,13 @@
 		<sDEF>
 			<ROOT>
 				<sheetTitle>Settings</sheetTitle>
-				<type>array</type>
 				<el>
 					<containerWrapper>
 						<label>Wrapp into a container </label>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
-							<items type="array">
+							<items>
 								<numIndex index="0">
 									<label>no container</label>
 									<value></value>
