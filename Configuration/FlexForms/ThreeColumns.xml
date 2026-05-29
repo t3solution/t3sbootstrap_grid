@@ -3,7 +3,6 @@
 		<sDEF>
 			<ROOT>
 				<sheetTitle>Settings</sheetTitle>
-				<type>array</type>
 				<el>
 					<equalWidth>
 						<label>Equal width</label>
@@ -25,7 +24,7 @@
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
-							<items type="array">
+							<items>
 								<numIndex index="0">
 									<label>no container</label>
 									<value></value>
@@ -138,7 +137,6 @@
 		<extraClass>
 			<ROOT>
 				<sheetTitle>Extra Class</sheetTitle>
-				<type>array</type>
 				<el>
 					<extraClass_one>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
@@ -164,11 +162,10 @@
 		<xxl>
 			<ROOT>
 				<sheetTitle>Col-xxl-*</sheetTitle>
-				<type>array</type>
+				<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 				<el>
 					<xxl_one>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -235,7 +232,6 @@
 					</xxl_one>
 					<xxl_two>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -302,7 +298,6 @@
 					</xxl_two>
 					<xxl_three>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -373,11 +368,10 @@
 		<xl>
 			<ROOT>
 				<sheetTitle>Col-xl-*</sheetTitle>
-				<type>array</type>
+				<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 				<el>
 					<xl_one>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -444,7 +438,6 @@
 					</xl_one>
 					<xl_two>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -511,7 +504,6 @@
 					</xl_two>
 					<xl_three>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -582,11 +574,10 @@
 		<lg>
 			<ROOT>
 				<sheetTitle>Col-lg-*</sheetTitle>
-				<type>array</type>
+				<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 				<el>
 					<lg_one>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -653,7 +644,6 @@
 					</lg_one>
 					<lg_two>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -720,7 +710,6 @@
 					</lg_two>
 					<lg_three>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -791,11 +780,10 @@
 		<md>
 			<ROOT>
 				<sheetTitle>Col-md-*</sheetTitle>
-				<type>array</type>
+				<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 				<el>
 					<md_one>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -862,7 +850,6 @@
 					</md_one>
 					<md_two>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -929,7 +916,6 @@
 					</md_two>
 					<md_three>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1000,11 +986,10 @@
 		<sm>
 			<ROOT>
 				<sheetTitle>Col-sm-*</sheetTitle>
-				<type>array</type>
+				<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 				<el>
 					<sm_one>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1071,7 +1056,6 @@
 					</sm_one>
 					<sm_two>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1138,7 +1122,6 @@
 					</sm_two>
 					<sm_three>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1209,11 +1192,10 @@
 		<xs>
 			<ROOT>
 				<sheetTitle>Col-*</sheetTitle>
-				<type>array</type>
+				<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 				<el>
 					<xs_one>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.0</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1280,7 +1262,6 @@
 					</xs_one>
 					<xs_two>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.1</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>
@@ -1347,7 +1328,6 @@
 					</xs_two>
 					<xs_three>
 						<label>LLL:EXT:t3sbootstrap_grid/Resources/Private/Language/locallang_be.xlf:tx_container.anyColumns.colPos.2</label>
-						<displayCond>FIELD:sDEF.equalWidth:=:0</displayCond>
 						<config>
 							<type>select</type>
 							<renderType>selectSingle</renderType>

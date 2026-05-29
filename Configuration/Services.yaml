@@ -6,4 +6,3 @@ services:
 
   T3S\T3sbootstrapGrid\:
     resource: '../Classes/*'
-

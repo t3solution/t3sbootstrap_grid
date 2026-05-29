@@ -3,18 +3,16 @@
 
 	<f:variable name="gridclass">{t3s:flexform(flexform: '{data.tx_t3sbootstrap_grid_flexform}')}</f:variable>
 
-
-
-		<f:if condition="{gridclass.containerClass}">
-			<f:then>
-				<div class="{gridclass.containerClass}">
-					<f:render section="Default" arguments="{_all}" />
-				</div>
-			</f:then>
-			<f:else>
+	<f:if condition="{gridclass.containerClass}">
+		<f:then>
+			<div class="{gridclass.containerClass}">
 				<f:render section="Default" arguments="{_all}" />
-			</f:else>
-		</f:if>
+			</div>
+		</f:then>
+		<f:else>
+			<f:render section="Default" arguments="{_all}" />
+		</f:else>
+	</f:if>
 
 </html>
 

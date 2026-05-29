@@ -1,0 +1,27 @@
+categories:
+  Bootstrap:
+    label: 'Bootstrap Grid Components'
+
+  Bootstrap.templates:
+    label: 'Template'
+    parent: Bootstrap
+
+  Bootstrap.css:
+    label: 'Bootstrap CSS'
+    parent: Bootstrap
+
+settings:
+
+  bootstrap.view.templateRootPath:
+    label: 'Path of Fluid Templates'
+    category: Bootstrap.templates
+    description: 'Path to the templates'
+    type: string
+    default: 'EXT:t3sbootstrap_grid/Resources/Private/Templates/'
+
+  bootstrap.css:
+    label: 'Required Bootstrap styles'
+    category: Bootstrap.css
+    type: bool
+    default: true
+

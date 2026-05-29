@@ -3,7 +3,6 @@
     "description": "Bootstrap 5 grid system from the EXT:t3sbootstrap.",
     "license": "GPL-2.0-or-later",
     "type": "typo3-cms-extension",
-    "description": "",
     "authors": [
         {
             "name": "Helmut Hackbarth",
@@ -11,12 +10,13 @@
         }
     ],
     "require": {
-        "typo3/cms-core": "^13.4",
-		"b13/container": "^3"
+        "php": "^8.2 || ^8.3 || ^8.4 || ^8.5",
+        "typo3/cms-core": "^14.3",
+        "b13/container": "^3.2"
     },
     "autoload": {
         "psr-4": {
-            "T3S\\T3sbootstrapGrid\\": "Classes"
+            "T3S\\T3sbootstrapGrid\\": "Classes/"
         }
     },
     "extra": {
@@ -24,5 +24,4 @@
             "extension-key": "t3sbootstrap_grid"
         }
     }
-
 }

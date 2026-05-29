@@ -1,0 +1,4 @@
+name: t3s/t3sbootstrap-grid
+label: T3S Bootstrap Grid - SETTINGS
+dependencies:
+  - typo3/fluid-styled-content

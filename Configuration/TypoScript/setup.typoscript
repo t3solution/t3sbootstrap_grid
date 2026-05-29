@@ -1,17 +1,17 @@
 plugin.tx_t3sbootstrap_grid {
 	view {
 		templateRootPaths.0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/
-		templateRootPaths.10 = {$plugin.tx_t3sbootstrap_grid.view.templateRootPath}
+		templateRootPaths.10 = {$bootstrap.view.templateRootPath}
 	}
 }
-
+  
 page {
+
 	includeCSS {
-		bootstrapCDN = https://cdn.jsdelivr.net/npm/bootstrap@{$plugin.tx_t3sbootstrap_grid.settings.bootstrapVersion}/dist/css/bootstrap.min.css
-		bootstrapCDN.external = 1
-		bootstrapCDN.forceOnTop = 1
-		bootstrapCDN.if.isTrue = {$plugin.tx_t3sbootstrap_grid.settings.enableCDN}
+		t3sbootstrap-grid = EXT:t3sbootstrap_grid/Resources/Public/Styles/bootstrap-grid.css
+		t3sbootstrap-grid.if.isTrue = {$bootstrap.css}
 	}
+	
 }
 
 tt_content {
@@ -20,7 +20,7 @@ tt_content {
 		templateName = TwoColumns
 		templateRootPaths {
 			0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/Container/
-			1 = {$plugin.t3sbootstrap_grid.view.templateRootPath}Container/
+			1 =  {$bootstrap.view.templateRootPath}Container/
 		}
 		dataProcessing {
 
@@ -41,7 +41,7 @@ tt_content {
 		templateName = ThreeColumns
 		templateRootPaths {
 			0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/Container/
-			1 = {$plugin.tx_t3sbootstrap_grid.view.templateRootPath}Container/
+			1 = {$bootstrap.view.templateRootPath}Container/
 		}
 		dataProcessing {
 
@@ -67,7 +67,7 @@ tt_content {
 		templateName = FourColumns
 		templateRootPaths {
 			0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/Container/
-			1 = {$plugin.tx_t3sbootstrap_grid.view.templateRootPath}Container/
+			1 = {$bootstrap.view.templateRootPath}Container/
 		}
 		dataProcessing {
 
@@ -98,7 +98,7 @@ tt_content {
 		templateName = SixColumns
 		templateRootPaths {
 			0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/Container/
-			1 = {$plugin.tx_t3sbootstrap_grid.view.templateRootPath}Container/
+			1 =  {$bootstrap.view.templateRootPath}Container/
 		}
 		dataProcessing {
 
@@ -139,10 +139,9 @@ tt_content {
 		templateName = RowColumns
 		templateRootPaths {
 			0 = EXT:t3sbootstrap_grid/Resources/Private/Templates/Container/
-			1 = {$plugin.t3sbootstrap_grid.view.templateRootPath}Container/
+			1 = {$bootstrap.view.templateRootPath}Container/
 		}
 		dataProcessing {
-
 			221 = B13\Container\DataProcessing\ContainerProcessor
 			221 {
 				colPos = 290

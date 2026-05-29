@@ -1,11 +1,6 @@
 <?php
+
 declare(strict_types=1);
-
-namespace T3S\T3sbootstrapGrid\ViewHelpers;
-
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Service\FlexFormService;
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /*
  * This file is part of the TYPO3 extension t3sbootstrap_grid.
@@ -13,12 +8,38 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
  */
+
+namespace T3S\T3sbootstrapGrid\ViewHelpers;
+
+use TYPO3\CMS\Core\Service\FlexFormService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 class FlexformViewHelper extends AbstractViewHelper
 {
+	/**
+	 * Mapping of Bootstrap breakpoint prefixes to row-class array indices.
+	 * Order: largest breakpoint first, so longer prefixes (xxl) match before xl.
+	 */
+	private const BREAKPOINT_MAP = [
+		'xxl' => 5,
+		'xl' => 4,
+		'lg' => 3,
+		'md' => 2,
+		'sm' => 1,
+		'xs' => 0,
+	];
+
+	private const COLUMN_POSITIONS = ['one', 'two', 'three', 'four', 'five', 'six'];
 
 	/**
-	 * @return void
+	 * Column positions sorted by length descending, so longer suffixes
+	 * ('three', 'four', 'five') are matched before shorter ones ('one', 'two', 'six').
 	 */
+	private const COLUMN_POSITIONS_BY_LENGTH = ['three', 'four', 'five', 'one', 'two', 'six'];
+
+	private const SKIP_KEYS = ['containerWrapper', 'row_extraClass', 'verticalGutters', 'horizontalGutters'];
+
 	public function initializeArguments(): void
 	{
 		parent::initializeArguments();
@@ -26,178 +47,180 @@ class FlexformViewHelper extends AbstractViewHelper
 		$this->registerArgument('cType', 'string', 'CType', false);
 	}
 
-	public function render()
+	/**
+	 * Parses the FlexForm XML and builds Bootstrap grid classes.
+	 *
+	 * @return array<string, mixed>
+	 */
+	public function render(): array
 	{
-		$classes = [];
+		$classes = [
+			'extraClassCols' => '',
+			'rowClass' => [],
+		];
 
-		if ( empty( $this->arguments['flexform']) ) {
+		if (empty($this->arguments['flexform'])) {
 			return $classes;
 		}
 
-		$extraClass = [];
-		$extraClass['extraClass_one'] = '';
-		$extraClass['extraClass_two'] = '';
-		$extraClass['extraClass_three'] = '';
-		$extraClass['extraClass_four'] = '';
-		$extraClass['extraClass_five'] = '';
-		$extraClass['extraClass_six'] = '';
-		$classes['extraClassCols'] = '';
-		$classes['rowClass'] = '';
+		$flexconf = GeneralUtility::makeInstance(FlexFormService::class)
+			->convertFlexFormContentToArray((string)$this->arguments['flexform']);
 
-		$flexFormService = GeneralUtility::makeInstance(FlexFormService::class);
-		$flexconf = $flexFormService->convertFlexFormContentToArray($this->arguments['flexform']);
+		$cType = (string)($this->arguments['cType'] ?? '');
 
-		if ( !empty($this->arguments['cType']) && $this->arguments['cType'] == 'row_columns' ) {
-			// row_columns
-			if ( !empty($flexconf['cols_extraClass']) ) {
-				$classes['extraClassCols'] = ' '.trim($flexconf['cols_extraClass']);
-
-			}
-
-			$keyArr = [];
-			$rowClass = [];
-
-			foreach (array_reverse($flexconf) as $key=>$grid) {
-
-				if (!empty($grid)) {
-
-					$keyArr = explode('_', $key);
-
-					if ( !empty($keyArr[1]) ) {
-
-						if ( $keyArr[1] == 'rowclass' ) {
-							if (str_starts_with($key, 'xxl_')) {
-								$rowClass[5] = '-'.$grid;
-							} elseif (str_starts_with($key, 'xl_')) {
-								$rowClass[4] = '-'.$grid;
-							} elseif (str_starts_with($key, 'lg_')) {
-								$rowClass[3] = '-'.$grid;
-							} elseif (str_starts_with($key, 'md_')) {
-								$rowClass[2] = '-'.$grid;
-							} elseif (str_starts_with($key, 'sm_')) {
-								$rowClass[1] = '-'.$grid;
-							}elseif (str_starts_with($key, 'xs_')) {
-								$rowClass[0] = '-'.$grid;
-							}
-						}
-					}
-				}
-			}
-
-			$classes['rowClass'] = $rowClass;
-
+		if ($cType === 'row_columns') {
+			$classes = array_merge($classes, $this->buildRowColumnsClasses($flexconf));
 		} else {
-
-			if ( !empty($flexconf['equalWidth']) ) {
-
-				$colOne = 'col';
-				$colTwo = 'col';
-				$colThree = 'col';
-				$colFour = 'col';
-				$colFive = 'col';
-				$colSix = 'col';
-
-				foreach (array_reverse($flexconf) as $key=>$grid) {
-
-					if ($grid) {
-
-						if (str_starts_with($key, 'extraClass_')) {
-							$extraClass[$key] = trim($grid);
-						}
-					}
-				}
-
-			} else {
-
-				$colOne = '';
-				$colTwo = '';
-				$colThree = '';
-				$colFour = '';
-				$colFive = '';
-				$colSix = '';
-
-				foreach (array_reverse($flexconf) as $key=>$grid) {
-
-					if (!empty($grid)) {
-
-						if (str_starts_with($key, 'extraClass_')) {
-							$extraClass[$key] = trim($grid);
-						} elseif ( $key === 'containerWrapper' || $key === 'row_extraClass' || $key === 'verticalGutters' || $key === 'horizontalGutters' ) {
-							// do nothing
-						} else {
-							if ( substr($key, 0, 2) == 'xs' ) {
-								if ( substr($key, -3) == 'one' ) {
-									$colOne .= ' col-'.$grid;
-								}
-								if ( substr($key, -3) == 'two' ) {
-									$colTwo .= ' col-'.$grid;
-								}
-								if ( substr($key, -5) == 'three' ) {
-									$colThree .= ' col-'.$grid;
-								}
-								if ( substr($key, -4) == 'four' ) {
-									$colFour .= ' col-'.$grid;
-								}
-								if ( substr($key, -4) == 'five' ) {
-									$colFive .= ' col-'.$grid;
-								}
-								if ( substr($key, -3) == 'six' ) {
-									$colSix .= ' col-'.$grid;
-								}
-							} else {
-								if ( substr($key, -3) == 'one' ) {
-									$colOne .= ' col-'.substr($key, 0, -4).'-'.$grid;
-								}
-								if ( substr($key, -3) == 'two' ) {
-									$colTwo .= ' col-'.substr($key, 0, -4).'-'.$grid;
-								}
-								if ( substr($key, -5) == 'three' ) {
-									$colThree .= ' col-'.substr($key, 0, -6).'-'.$grid;
-								}
-								if ( substr($key, -4) == 'four' ) {
-									$colFour .= ' col-'.substr($key, 0, -5).'-'.$grid;
-								}
-								if ( substr($key, -4) == 'five' ) {
-									$colFive .= ' col-'.substr($key, 0, -5).'-'.$grid;
-								}
-								if ( substr($key, -3) == 'six' ) {
-									$colSix .= ' col-'.substr($key, 0, -4).'-'.$grid;
-								}
-							}
-						}
-					}
-				}
-			}
-
-			$classes['columnOne'] = trim($colOne.' '.$extraClass['extraClass_one']);
-			$classes['columnTwo'] = trim($colTwo.' '.$extraClass['extraClass_two']);
-			$classes['columnThree'] = trim($colThree.' '.$extraClass['extraClass_three']);
-			$classes['columnFour'] = trim($colFour.' '.$extraClass['extraClass_four']);
-			$classes['columnFive'] = trim($colFive.' '.$extraClass['extraClass_five']);
-			$classes['columnSix'] = trim($colSix.' '.$extraClass['extraClass_six']);
+			$classes = array_merge($classes, $this->buildGridColumnsClasses($flexconf));
 		}
 
-		$horizontalGutters = !empty($flexconf['horizontalGutters']) && $flexconf['horizontalGutters'] == 'gx-4' ? '' : ' '.$flexconf['horizontalGutters'];
-		$verticalGutters = !empty($flexconf['verticalGutters']) && $flexconf['verticalGutters'] == 'gy-4' ? '' : $flexconf['verticalGutters'];
-		$extraContainerClass = '';
-		#if ( $verticalGutters !== 'gy-0' ) {
-		#	$extraContainerClass = ' overflow-hidden';
-		#}
-		$containerWrapper = !empty($flexconf['containerWrapper']) ? $flexconf['containerWrapper'] : '';
-		if ( empty($containerWrapper) ) {
-			$extraContainerClass = trim($extraContainerClass);
-		}
-		$gutters = trim($horizontalGutters).' '.trim($verticalGutters);
-		if (empty($gutters)) {
-			$classes['gutters'] = '';
-		} else {
-			$classes['gutters'] = ' '.trim($gutters);
-		}
-
-		$classes['extraClassRow'] = !empty($flexconf['row_extraClass']) ?	 ' '.trim($flexconf['row_extraClass']) : '';
-		$classes['containerClass'] = $containerWrapper.$extraContainerClass;
+		$classes['gutters'] = $this->buildGutterClasses($flexconf);
+		$classes['extraClassRow'] = !empty($flexconf['row_extraClass'])
+			? ' ' . trim((string)$flexconf['row_extraClass'])
+			: '';
+		$classes['containerClass'] = (string)($flexconf['containerWrapper'] ?? '');
 
 		return $classes;
 	}
 
+	/**
+	 * @param array<string, mixed> $flexconf
+	 * @return array{extraClassCols: string, rowClass: array<int, string>}
+	 */
+	private function buildRowColumnsClasses(array $flexconf): array
+	{
+		$result = [
+			'extraClassCols' => '',
+			'rowClass' => [],
+		];
+
+		if (!empty($flexconf['cols_extraClass'])) {
+			$result['extraClassCols'] = ' ' . trim((string)$flexconf['cols_extraClass']);
+		}
+
+		foreach (array_reverse($flexconf) as $key => $grid) {
+			if (empty($grid) || !is_string($key)) {
+				continue;
+			}
+
+			$parts = explode('_', $key);
+			if (($parts[1] ?? '') !== 'rowclass') {
+				continue;
+			}
+
+			foreach (self::BREAKPOINT_MAP as $bp => $idx) {
+				if (str_starts_with($key, $bp . '_')) {
+					$result['rowClass'][$idx] = '-' . (string)$grid;
+					break;
+				}
+			}
+		}
+
+		return $result;
+	}
+
+	/**
+	 * Build column classes (with breakpoint-specific col-xx-N entries
+	 * plus optional extra classes) for the standard grid containers.
+	 *
+	 * @param array<string, mixed> $flexconf
+	 * @return array<string, string>
+	 */
+	private function buildGridColumnsClasses(array $flexconf): array
+	{
+		$extraClass = array_fill_keys(
+			array_map(static fn (string $pos): string => 'extraClass_' . $pos, self::COLUMN_POSITIONS),
+			''
+		);
+
+		// Collect extra classes (relevant in both equalWidth and grid mode)
+		foreach ($flexconf as $key => $value) {
+			if (empty($value) || !is_string($key)) {
+				continue;
+			}
+			if (str_starts_with($key, 'extraClass_')) {
+				$extraClass[$key] = trim((string)$value);
+			}
+		}
+
+		$isEqualWidth = !empty($flexconf['equalWidth']);
+		$cols = array_fill_keys(self::COLUMN_POSITIONS, $isEqualWidth ? 'col' : '');
+
+		if (!$isEqualWidth) {
+			foreach (array_reverse($flexconf) as $key => $grid) {
+				if (empty($grid) || !is_string($key)) {
+					continue;
+				}
+				if (str_starts_with($key, 'extraClass_') || in_array($key, self::SKIP_KEYS, true)) {
+					continue;
+				}
+
+				$position = $this->resolveColumnPosition($key);
+				if ($position === null) {
+					continue;
+				}
+
+				$cols[$position] .= ' ' . $this->buildColClass($key, $position, (string)$grid);
+			}
+		}
+
+		return [
+			'columnOne' => trim($cols['one'] . ' ' . $extraClass['extraClass_one']),
+			'columnTwo' => trim($cols['two'] . ' ' . $extraClass['extraClass_two']),
+			'columnThree' => trim($cols['three'] . ' ' . $extraClass['extraClass_three']),
+			'columnFour' => trim($cols['four'] . ' ' . $extraClass['extraClass_four']),
+			'columnFive' => trim($cols['five'] . ' ' . $extraClass['extraClass_five']),
+			'columnSix' => trim($cols['six'] . ' ' . $extraClass['extraClass_six']),
+		];
+	}
+
+	/**
+	 * Find which column position a FlexForm key belongs to.
+	 * Uses the length-sorted list so 'three'/'four'/'five' match before
+	 * 'one'/'two'/'six' (defensive guard against suffix collisions).
+	 */
+	private function resolveColumnPosition(string $key): ?string
+	{
+		foreach (self::COLUMN_POSITIONS_BY_LENGTH as $position) {
+			if (str_ends_with($key, '_' . $position)) {
+				return $position;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * Build a Bootstrap col-* class for one grid setting.
+	 * For the xs breakpoint, Bootstrap uses no suffix; for others use col-{bp}-{n}.
+	 */
+	private function buildColClass(string $key, string $position, string $grid): string
+	{
+		// The breakpoint prefix is everything before '_{position}'
+		$breakpoint = substr($key, 0, -1 * (strlen($position) + 1));
+
+		if ($breakpoint === 'xs') {
+			return 'col-' . $grid;
+		}
+
+		return 'col-' . $breakpoint . '-' . $grid;
+	}
+
+	/**
+	 * Build gutter classes; returns empty string if both default to Bootstrap defaults.
+	 *
+	 * @param array<string, mixed> $flexconf
+	 */
+	private function buildGutterClasses(array $flexconf): string
+	{
+		$horizontal = (string)($flexconf['horizontalGutters'] ?? '');
+		$vertical = (string)($flexconf['verticalGutters'] ?? '');
+
+		$horizontalPart = ($horizontal === '' || $horizontal === 'gx-4') ? '' : $horizontal;
+		$verticalPart = ($vertical === '' || $vertical === 'gy-4') ? '' : $vertical;
+
+		$combined = trim($horizontalPart . ' ' . $verticalPart);
+
+		return $combined === '' ? '' : ' ' . $combined;
+	}
 }
