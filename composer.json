@@ -11,8 +11,9 @@
         }
     ],
     "require": {
-        "typo3/cms-core": "^13.4",
-		"b13/container": "^3"
+        "php": "^8.2 || ^8.3 || ^8.4 || ^8.5",
+        "typo3/cms-core": "^14.3",
+		"b13/container": "^3.2"
     },
     "autoload": {
         "psr-4": {
@@ -21,8 +22,11 @@
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "t3sbootstrap_grid"
+            "extension-key": "t3sbootstrap_grid",
+            "version": "5.0.0",
+            "Package": {
+                "providesPackages": {}
+            }
         }
     }
-
 }

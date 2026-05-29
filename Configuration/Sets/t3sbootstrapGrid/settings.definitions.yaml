@@ -1,0 +1,34 @@
+categories:
+  Bootstrap:
+    label: 'Bootstrap Grid Components'
+
+  Bootstrap.templates:
+    label: 'Template'
+    parent: Bootstrap
+
+  Bootstrap.config.cdn:
+    label: 'CDN - Settings'
+    parent: Bootstrap
+
+settings:
+
+  bootstrap.view.templateRootPath:
+    label: 'Path of Fluid Templates'
+    category: Bootstrap.templates
+    description: 'Path to the templates'
+    type: string
+    default: 'EXT:t3sbootstrap_grid/Resources/Private/Templates/'
+
+  bootstrap.enableCDN:
+    label: 'Enable CDN - please consider the "GDPR" ("DSGVO")'
+    category: Bootstrap.config.cdn
+    type: bool
+    default: true
+
+  bootstrap.version:
+    label: 'Bootstrap Version for CDN'
+    category: Bootstrap.config.cdn
+    description: ''
+    type: string
+    default: '5.3.8'
+

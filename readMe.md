@@ -1,29 +1,53 @@
-# TYPO3 Extension ``t3sbootstrap_grid``
+# TYPO3 Extension `t3sbootstrap_grid`
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/t3sbootstrap)
 [![Latest Stable Version](https://poser.pugx.org/t3sbs/t3sbootstrap_grid/v/stable)](https://packagist.org/packages/t3sbs/t3sbootstrap_grid)
 [![Monthly Downloads](https://poser.pugx.org/t3sbs/t3sbootstrap_grid/d/monthly)](https://packagist.org/packages/t3sbs/t3sbootstrap_grid)
 [![License](https://poser.pugx.org/t3sbs/t3sbootstrap_grid/license)](https://packagist.org/packages/t3sbs/t3sbootstrap_grid)
 
-> Startup extension to use bootstrap 5 classes, components and more out of the box.
+A startup extension that brings the Bootstrap grid system to TYPO3. Editors get ready-to-use container content elements — 2, 3, 4 and 6 columns plus a flexible row-columns layout — configurable directly through the page module.
 
-## 1. Usage
+## Features
 
+- Ready-to-use Bootstrap grid containers: 2, 3, 4, 6 columns and row-columns
+- Per-breakpoint column widths (xs, sm, md, lg, xl, xxl) configured via FlexForm
+- Optional container wrapper, custom gutters and extra CSS classes per column
+- Built on top of EXT:container for nested content
+- Site Sets support using the modern TYPO3 Site Settings approach
+- CDN delivery of Bootstrap assets enabled by default, with the option to use your own build
 
-### 1) Installation
+## Requirements
 
-#### Installation using Composer
+- TYPO3 v14
+- [EXT:container](https://extensions.typo3.org/extension/container) (`b13/container`)
 
-The recommended way to install the extension is by using Composer. In your Composer based TYPO3 project root, just do `composer require t3s/t3sbootstrap-grid`. 
+## Installation
 
-#### Installation as extension from TYPO3 Extension Repository (TER)
+### With Composer (recommended)
 
-Download and install the extension with the extension manager module.
-The following extensions must be installed before: container min. v.1.4.2
+In the root of your Composer-based TYPO3 project, run:
 
-### 2) Minimal setup
+```bash
+composer require t3sbs/t3sbootstrap_grid
+```
 
-1) Include the static TypoScript of the extension.
-2) Delete the default PAGE object from your Setup.
+### From the TYPO3 Extension Repository (TER)
 
-More infos: https://www.t3sbootstrap.de/dokumentation/extensions/t3sbootstrap-grid
+Download and install the extension through the Extension Manager in the TYPO3 backend.
+
+## Setup
+
+The extension uses Site Sets (TYPO3 v13+), so configuration is applied per site rather than through legacy static templates.
+
+1. Open your site configuration and add the `t3sbootstrap_grid` set as a dependency.
+
+By default the Bootstrap assets are loaded from a CDN. If you ship your own Bootstrap assets, disable the "Enable CDN" option in the extension configuration.
+
+## License
+
+Released under the GPL-2.0-or-later license. See the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you find this extension useful, consider supporting its development:
+[Donate via PayPal](https://www.paypal.me/t3sbootstrap)

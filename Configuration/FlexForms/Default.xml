@@ -3,7 +3,6 @@
 		<sDEF>
 			<ROOT>
 				<sheetTitle>Settings</sheetTitle>
-				<type>array</type>
 				<el>
 					<containerWrapper>
 						<label>Wrapp into a container </label>
